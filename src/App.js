@@ -1,12 +1,13 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Learn React Testing</h1>
-    </div>
-  );
+    return (
+        <div data-test="component-app">
+
+        </div>
+    );
 }
 
 export default App;
