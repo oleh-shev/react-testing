@@ -1,13 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import './App.css';
 
-function App() {
-    return (
-        <div data-test="component-app">
+import Congrats from "./components/Congrats";
+import GuessedWords from "./components/GuessedWords";
 
+const App = () => {
+    return (
+        <div data-test="component-app" className="container">
+            <h1>Jotto</h1>
+            <Congrats success={true} />
+            <GuessedWords guessedWords={[
+                { guessedWord: 'train', letterMatchCount: 3 }
+            ]} />
         </div>
     );
-}
+};
 
 export default App;
