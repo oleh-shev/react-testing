@@ -1,7 +1,7 @@
 import React from "react";
 import {shallow} from "enzyme";
 
-import {storeFactory} from "../test/testUtils";
+import {findByTestAtrr, storeFactory} from "../test/testUtils";
 import Input from "./Input";
 
 const setup = initialState => {
@@ -11,16 +11,34 @@ const setup = initialState => {
 
 describe('<Input/>', () => {
    describe('when word has not been guessed', () => {
+       let wrapper;
+
+       beforeEach(() => {
+           const initialState= { success: false}
+           wrapper = setup(initialState);
+       })
+
+       it('should render component without error', () => {
+            const component = findByTestAtrr(wrapper, 'component-input');
+            expect(component.length).toBe(1);
+       });
+
        it('should render input box', () => {
-            setup()
+           const inputBox = findByTestAtrr(wrapper, 'input-box');
+           expect(inputBox.length).toBe(1);
        });
 
        it('should render submit button', () => {
-
+           const submitButton = findByTestAtrr(wrapper, 'submit-button');
+           expect(submitButton.length).toBe(1);
        });
    });
 
    describe('when word has been guessed', () => {
+       it('should render component without error', () => {
+
+       });
+
        it('should not render input box', () => {
 
        });
