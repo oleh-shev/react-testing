@@ -1,0 +1,3 @@
+export {
+    correctGuess
+} from './success';
