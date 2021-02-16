@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
 import success from "./success";
 
-export default combineReducers({
-    success
+const rootReducer = combineReducers({
+    success: success
 });
+
+export default rootReducer;
