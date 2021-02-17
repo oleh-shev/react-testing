@@ -56,5 +56,20 @@ describe('<Input/>', () => {
            const submitButton = findByTestAtrr(wrapper, 'submit-button');
            expect(submitButton.length).toBe(0);
        });
-   })
+   });
+
+   describe('redux props', () => {
+       it('should have success piece of state as prop', () => {
+           const success = true;
+           const wrapper = setup({ success });
+           const successProp = wrapper.instance().props.success;
+           expect(successProp).toBe(success);
+       });
+
+       it('should have guessWord action creator as a function prop', () => {
+           const wrapper = setup();
+           const guessWordProp = wrapper.instance().props.guessWord;
+           expect(guessWordProp).toBeInstanceOf(Function);
+       });
+   });
 });
