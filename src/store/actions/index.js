@@ -1,3 +1,3 @@
 export {
-    correctGuess
-} from './success';
+    guessWord
+} from './guessWord';
