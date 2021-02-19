@@ -1,11 +1,16 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import EnzymeAdapter from 'enzyme-adapter-react-16';
-
+import { shallow } from 'enzyme';
+import { findByTestAtrr } from "./test/testUtils";
 import App from './App';
 
-Enzyme.configure({ adapter: new EnzymeAdapter() });
+const setup = () => {
+    return shallow(<App />);
+};
 
-test('render without crashing', () => {
-
+describe('<App />', () => {
+    it('should be rendered without error', () => {
+        const wrapper = setup();
+        const component = findByTestAtrr(wrapper, 'component-app');
+        expect(component.length).toBe(1);
+    });
 });
