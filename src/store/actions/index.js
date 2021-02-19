@@ -5,3 +5,7 @@ export {
 export {
     getSecretWord
 } from './secretWord';
+
+export {
+    newWord
+} from './newWord';

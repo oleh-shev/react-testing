@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import NewWordButton from "./NewWordButton";
 
 const Congrats = ({ success=false }) => {
     return (
@@ -8,6 +9,7 @@ const Congrats = ({ success=false }) => {
                 <span data-test="congrats-message">
                     Congratulations! You guessed the word!
                 </span>
+                <NewWordButton />
             </div>
         ) : (
             <div data-test="component-congrats" />
