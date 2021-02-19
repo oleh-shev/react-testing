@@ -5,7 +5,7 @@ import * as actions from "../store/actions";
 class Input extends Component {
 
     state = {
-       currentGuess: null
+       currentGuess: ''
     }
 
     submitGuessedWord = event => {
@@ -15,6 +15,8 @@ class Input extends Component {
         if (guessedWord && guessedWord.length > 0) {
             this.props.guessWord(guessedWord);
         }
+
+        this.setState({ currentGuess: '' });
     }
 
     render() {

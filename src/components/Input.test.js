@@ -102,5 +102,9 @@ describe('<Input/>', () => {
 
            expect(guessWordArg).toBe(guessedWord);
        });
+
+       it('should clear input box on submit', () => {
+           expect(wrapper.state('currentGuess')).toBe('');
+       });
    })
 });
